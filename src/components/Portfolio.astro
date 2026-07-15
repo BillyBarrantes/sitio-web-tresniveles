@@ -1,0 +1,31 @@
+---
+
+
+---
+
+<section id="portfolio" class="wow fadeInUp">
+  <div class="container">
+    <div class="section-header">
+      <h2>Nuestro Portafolio</h2>
+      <p>Aquí te mostramos cómo transformamos ideas en soluciones digitales robustas y eficientes. Cada proyecto es una prueba de nuestra pasión por la tecnología y los resultados de primer nivel.</p>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row no-gutters">
+      {
+        Array.from({ length: 8 }, (_, i) => i + 1).map((num) => (
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href={`/img/portfolio/${num}.png`} class="portfolio-popup">
+                <img src={`/img/portfolio/${num}.png`} alt={`Proyecto de desarrollo de software realizado por Tres Niveles - Portafolio ${num}`} loading="lazy">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Proyecto {num}</h2></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

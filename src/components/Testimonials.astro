@@ -1,0 +1,52 @@
+---
+
+const testimonials = [
+  {
+    text: "Tres Niveles llevó nuestra visión a la realidad. Crearon una app de ventas increíblemente fluida y atractiva que no solo modernizó nuestra marca, sino que también impulsó nuestras ventas online de manera significativa.",
+    img: "/img/testimonial-2.png",
+    name: "Lucí Reyes",
+    role: "UrbanKicks"
+  },
+  {
+    text: "La implementación del Agente IA para la gestión de citas ha mejoró todo. Hemos reducido la carga administrativa y optimizado la agenda, permitiendo que nuestro personal se enfoque en lo más importante.",
+    img: "/img/testimonial-3.png",
+    name: "Dr. Leonardo Vera",
+    role: "Cirujano"
+  },
+  {
+    text: "Necesitábamos digitalizar nuestros controles y el checklist para montacargas su desarrollo fue la solución ideal. Es intuitivo, robusto y ha mejorado nuestros protocolos de seguridad y eficiencia operativa.",
+    img: "/img/testimonial-4.png",
+    name: "Javier Mendoza",
+    role: "RenMont"
+  },
+  {
+    text: "El software de venta que Tres Niveles creó para nosotros es rápido, confiable y muy fácil de usar para nuestro equipo. Ha agilizado todo el proceso de pedidos y nos ha dado un control total sobre las ventas.",
+    img: "/img/testimonial-5.png",
+    name: "Sofía Torres",
+    role: "Rapi Burguer"
+  }
+];
+---
+
+<section id="testimonials" class="wow fadeInUp">
+  <div class="container">
+    <div class="section-header">
+      <h2>Testimonios</h2>
+      <p>El éxito de nuestros clientes habla por sí mismo. Aquí compartimos algunas de las experiencias de quienes confiaron en nosotros para su transformación digital y crecimiento.</p>
+    </div>
+    <div class="owl-carousel testimonials-carousel">
+      {testimonials.map((t) => (
+        <div class="testimonial-item">
+          <p>
+            <img src="/img/quote-sign-left.png" class="quote-sign-left" alt="" aria-hidden="true" loading="lazy">
+            {t.text}
+            <img src="/img/quote-sign-right.png" class="quote-sign-right" alt="" aria-hidden="true" loading="lazy">
+          </p>
+          <img src={t.img} class="testimonial-img" alt={`Foto de ${t.name}, ${t.role}`} loading="lazy" width="90" height="90">
+          <h3>{t.name}</h3>
+          <h4>{t.role}</h4>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,66 @@
+---
+
+// IMPORTANTE: Reemplaza este ID con el que te dé Formspree al registrarte
+const FORMSPREE_ID = "xqkggwdb";
+---
+
+<section id="contact" class="wow fadeInUp">
+  <div class="container">
+    <div class="section-header">
+      <h2>Contáctanos en Tres Niveles</h2>
+      <p>Estamos listos para escuchar tus ideas y necesidades. Escríbenos, llámanos o visítanos.</p>
+    </div>
+
+    <div class="row contact-info">
+      <div class="col-md-4">
+        <div class="contact-address">
+          <i class="ion-ios-location-outline"></i>
+          <h3>Oficina Principal</h3>
+          <address>Calle Alfredo Maldonado 654, Distrito de Pueblo Libre, Lima - Perú</address>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-phone">
+          <i class="ion-ios-telephone-outline"></i>
+          <h3>Teléfono</h3>
+          <p><a href="tel:+51907948972">+51 907 948 972</a></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-email">
+          <i class="ion-ios-email-outline"></i>
+          <h3>Email</h3>
+          <p><a href="mailto:info@tresniveles.com">info@tresniveles.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="google-map" data-latitude="-12.07421" data-longitude="-77.06047"></div>
+
+  <div class="container">
+    <div class="form">
+      <div id="sendmessage">¡Gracias! Tu mensaje ha sido enviado. Te contactaremos pronto.</div>
+      <div id="errormessage"></div>
+      <form action={`https://formspree.io/f/${FORMSPREE_ID}`} method="POST" role="form" class="contactForm">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input type="text" name="name" class="form-control" id="name" placeholder="Nombre y Apellido" required minlength="4">
+          </div>
+          <div class="form-group col-md-6">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Correo Electrónico" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" required minlength="4">
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" name="message" rows="5" required placeholder="Mensaje"></textarea>
+        </div>
+        <!-- Honeypot field to prevent spam -->
+        <input type="text" name="_gotcha" style="display:none">
+        <div class="text-center"><button type="submit">Enviar mensaje</button></div>
+      </form>
+    </div>
+  </div>
+</section>

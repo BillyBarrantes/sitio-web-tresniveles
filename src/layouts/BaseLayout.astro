@@ -1,0 +1,105 @@
+---
+import '../styles/style.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { title = 'Tres Niveles - Expertos en Desarrollo de Software y Automatización',
+        description = 'En Tres Niveles transformamos ideas en soluciones digitales: desarrollo de software a medida, automatización de procesos, páginas web profesionales e implementación de agentes IA en Lima, Perú.',
+        ogImage = 'https://tresniveles.com/img/3_Niveles.png' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="keywords" content="desarrollo de software, automatización, páginas web, agentes IA, Lima, Perú, Tres Niveles">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tresniveles.com">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:url" content="https://tresniveles.com">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="Tres Niveles">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImage}>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tres Niveles",
+    "url": "https://tresniveles.com",
+    "logo": "https://tresniveles.com/img/3_Niveles.png",
+    "description": description,
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+51-907-948-972",
+      "contactType": "sales",
+      "availableLanguage": ["Spanish", "English"]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle Alfredo Maldonado 654",
+      "addressLocality": "Pueblo Libre",
+      "addressRegion": "Lima",
+      "addressCountry": "PE"
+    },
+    "sameAs": [
+      "https://www.facebook.com/3niveles",
+      "https://www.instagram.com/tres_niveles",
+      "https://www.linkedin.com/company/tres-niveles/"
+    ]
+  })} />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Raleway:wght@400;500;700;800&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Owl Carousel -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
+
+  <!-- Magnific Popup -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet">
+
+  <!-- Animate.css -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+  <!-- IonIcons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://maps.googleapis.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-src 'self'; connect-src 'self' https://maps.googleapis.com https://formspree.io;">
+</head>
+<body id="body">
+  <slot />
+</body>
+</html>
